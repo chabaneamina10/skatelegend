@@ -22,8 +22,9 @@ cartes_legendaires = [
     {"nom": "720°"         , "couleur": None   , "récompense": 4, "piocher": 0, "rejouer": 0, "visible":0, "cassé":0, "condition": "5 couleurs"},
     {"nom": "air walk grab", "couleur": "bleu" , "récompense": 4, "piocher": 0, "rejouer": 0, "visible":1, "cassé":0, "condition": "2 skates cassés"},
     {"nom": "kick flip"    , "couleur": "vert" , "récompense": 5, "piocher": 0, "rejouer": 2, "visible":0, "cassé":0, "condition": None},
-    {"nom": "hippy jump"   , "couleur": "rouge", "récompense": 2, "piocher": 2, "rejouer": 0, "visible":0, "cassé":0, "condition": None},
-    {"nom": "casper slide" , "couleur": "jaune", "récompense": 4, "piocher": 0, "rejouer": 0, "visible":0, "cassé":1, "condition": "2 cartes même couleur"}
+    {"nom": "casper slide" , "couleur": "jaune", "récompense": 4, "piocher": 0, "rejouer": 0, "visible":0, "cassé":1, "condition": "2 cartes même couleur"},
+    {"nom": "hippy jump"   , "couleur": "rouge", "récompense": 2, "piocher": 2, "rejouer": 0, "visible":0, "cassé":0, "condition": None}
+
 ]
 perfect_landing = {"nom": "perfect landing", "couleur": None, "récompense": 5, "piocher": 0, "rejouer": 0, "visible":0, "cassé":0, "condition": None}
 liste_cartes=list(cartes)
@@ -39,8 +40,8 @@ carte9 = pygame.image.load("../assets/cartes/carte9.png")
 carte10 = pygame.image.load("../assets/cartes/carte10.png")
 carte11 = pygame.image.load("../assets/cartes/carte11.png")
 cl1=pygame.image.load("../assets/carteleg/cl1.png")
-cl2=pygame.image.load("../assets/carteleg/cl2.png")
 cl3=pygame.image.load("../assets/carteleg/cl3.png")
+cl2=pygame.image.load("../assets/carteleg/cl2.png")
 cl4=pygame.image.load("../assets/carteleg/cl4.png")
 cl5=pygame.image.load("../assets/carteleg/cl5.png")
 cl6=pygame.image.load("../assets/carteleg/cl6.png")
@@ -88,7 +89,9 @@ for i in range(108, 120):
 
 for i in range(len(liste_cartes)):
     liste_cartes[i]["bgimage"] = bg
-taille_carte = (130, 250)
+#taille_carte = (130, 250)
+taille_carte=(90,160)
+
 
 
 for carte in liste_cartes:
@@ -119,8 +122,8 @@ cartes_legendaires[3]["image"]=cl6
 cartes_legendaires[4]["image"]=cl8
 cartes_legendaires[5]["image"]=cl4
 cartes_legendaires[6]["image"]=cl1
-cartes_legendaires[7]["image"]=cl3
-cartes_legendaires[8]["image"]=cl2
+cartes_legendaires[7]["image"]=cl2
+cartes_legendaires[8]["image"]=cl3
 perfect_landing["image"]=cl10
 
 
@@ -129,3 +132,4 @@ for carte in cartes_legendaires:
 cl10=pygame.transform.scale(cl10, taille_carte)     
 cas=pygame.image.load("../assets/cas.png") 
 cas=pygame.transform.scale(cas,(50,50))  
+perfect_landing["image"]=pygame.transform.scale(perfect_landing["image"],taille_carte)
